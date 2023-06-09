@@ -1,0 +1,46 @@
+Column,Data Type,Description
+View_Detail,Numeric,
+Federal_Fiscal_Year,Numeric,Federal fiscal year of the project (starts October)
+Region,Character,"EPA Region, Region 4 for Florida"
+State_Code,Character,State abbreviation for project location (FL)
+NEP_Name,Character,Name of the National Estuary Program (Tampa Bay Estuary Program)
+Project_Name,Character,Name of the project from the partner
+Project_Description,Character,Description of the project from the partner
+Habitat_Description,Character,Long-form description of the project from the partner
+Habitat_Type,Character,Short category for the habitat type
+Restoration_Technique,Character,Type of restoration technique used for the project
+Donated_Land,Character,Yes/No indicating if land was donated
+Data_Unavailable,Character,Y indicating if data for the project are unavailable
+EPA_Section_320,Numeric,Amount of Clean Water Act Sec 320 funds that were used for the project
+Total_Project_Cost,Numeric,Total project cost that includes Sec 320 funds and other
+Project_Benefits,Character,"Benefit provided by the project, e.g., erosion control, improve or protect water quality"
+Activity_Name,Character,"General category for type of activity, one of Enhancement, Establishment, Maintenance, Protection, Reestablish, Rehabilitate, Restoration"
+Lead_Implementer,Character,Partner or organization leading the project
+Partners,Character,Additional partners supporting the lead implementer
+Main_Funding_Source,Character,Description of funding source funding a majority of the project
+Site_Owner,Character,Owneer of the site where the project occurred
+Last_Updated_Date,DateTime,"Date and time of last record update, day-month-year hours.minutes.seconds AM/PM and UTC change"
+NEP_Comments,Character,Optional comments from the NEP about the project
+HQ_Comments,Character,Optional EPA comments about the record
+HQ_Status,Character,Status indicating if HQ comments have been addressed
+Region_Status,Character,Status indicating if Region comments have been addressed
+Total_Cost,Character,
+Author,Character,Name of the individual entering the project
+Submitter_Email,Character,Email of the individual entering the project
+PrimaryHabitat,Character,"Description of the primary habitat type for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)"
+SecondaryHabitat,Character,"Description of the secondary habitat type if additional apply for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)"
+Acres,Numeric,Acreage estimate of the project area
+Miles,Numeric,"Linear distance in miles of the project area, usually only applies for linear features (e.g., living shorelines or riparian areas)"
+Latitude,Numeric,"Latitude in decimal degrees of the project location, EPSG 4326"
+Longitude,Numeric,"Longitude in decimal degrees of the project location, EPSG 4326"
+Feet,Numeric,"Linear distance in feet of the project area, usually only applies for linear features (e.g., living shorelines or riparian areas)"
+ID_Number,Character,
+GeneralHabitat,Character,"General habitat description of the project, one of Estuarine, Freshwater, Mix (estuarine and freshwater), Mix (estuarine and upland), Mix (estuarine, freshwater, and upland), Mix (freshwater and upland), Other, Upland"
+GeneralActivity,Character,"General activity descrption of the project, one of Enhancement or Restoration"
+BeforePhotoCredit,Character,Attribution for the photo before the project
+BeforePhotoCaption,Character,Caption for the photo before the project
+DuringPhotoCredit,Character,Attribution for the photo during the project
+DuringPhotoCaption,Character,Caption for the photo during the project
+AfterPhotoCredit,Character,Attribution for the photo after the project
+AfterPhotoCaption,Character,Caption for the photo after the project
+TBEP_Notes,Character,Optional notes about the project provided by Tampa Bay Estuary Program
