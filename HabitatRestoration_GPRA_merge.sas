@@ -2,7 +2,7 @@
 Program: HabitatRestoration_GPRA_merge.sas
 
 Purpose: Data cleaning and merge of historical habitat restoration data 
-and GPRA data up to 2022. Kept GPRA column names when possible to stay 
+and GPRA data up to 2023. Kept GPRA column names when possible to stay 
 consistant with NEPORT EPA database.
 
 Author: Kerry Flaherty Walia;
@@ -15,6 +15,7 @@ dm'log;clear;output;clear';
 %let nm1=HabRes;
 %let nm2=GPRAcomb;
 %let nm3=matches;
+%let nm4=GPRA2023;
 %let loc=F:\.shortcut-targets-by-id\1jYjIgneYtTSpOc7mJxc0luTPyv-QCGjj\TBEP_GENERAL\01_Program_Guidance\HMPU_2020\Tracking_HMPU\Habitat Restoration Data Cleaning\;
 *Habitat Restoration database;
 %let file1=HabitatRestorationTampaBay.csv;
@@ -22,6 +23,8 @@ dm'log;clear;output;clear';
 %let file2=GPRAformatted.csv;
 *Matches;
 %let file3=GPRA_HabRes_matchup.csv;
+*Approved GPRA 2023 data;
+%let file4=GPRA_FY2023_approved.csv;
 *output clean file;
 %let clean=Habitat_Restoration_Clean.csv;
 **************************************************************************
@@ -43,6 +46,12 @@ Run;
 *Import matching table;
 PROC IMPORT DATAFILE="&loc.&file3"
 OUT=WORK.&nm3
+DBMS=csv REPLACE;
+GUESSINGROWS=600;		
+Run;
+*Import matching table;
+PROC IMPORT DATAFILE="&loc.&file4"
+OUT=WORK.&nm4
 DBMS=csv REPLACE;
 GUESSINGROWS=600;		
 Run;
@@ -92,13 +101,22 @@ run;
 proc sort data=habres3; by Federal_Fiscal_Year Project_name;
 run;
 *** FORMATTING GPRA for merging;
-data GPRA1; set &nm2;
+data GPRA22; set &nm2;
+EPA_Section_3202=EPA_Section_320+0;
+drop View_Photos Map Count var35 var36 var37 var38 var39 var40 var41 var42 var43 var44 _ EPA_Section_320;
+run;
+data GPRA23; set &nm4;
+EPA_Section_3202=EPA_Section_320 +0;
+drop View_Photos Map Count var35 var36 var37 var38 var39 var40 var41 var42 var43 var44 _ EPA_Section_320;
+run;
+data GPRA1; set GPRA22 GPRA23;
 Acres1=Acres+0;
 Miles1=Miles+0;
 Latitude1=Latitude+0;
 Longitude1=Longitude+0;
 Feet1=Feet+0;
-drop View_Photos Map Count drop acres miles feet latitude longitude var39 var40 var41 var42;
+EPA_Section_320=EPA_Section_3202;
+drop acres miles feet latitude longitude EPA_Section_3202;
 run;
 data GPRA2; set GPRA1;
 Acres=Acres1;
@@ -115,12 +133,12 @@ end;
 drop acres1 miles1 latitude1 longitude1 feet1;
 run;
 data GPRA; set GPRA2;
-if Federal_Fiscal_Year not in (2022);
+if Federal_Fiscal_Year not in (2022,2023);
 run;
-proc sort; by Federal_Fiscal_Year Project_Name View_Detail;
+proc sort data=GPRA; by Federal_Fiscal_Year Project_Name View_Detail;
 run;
 data GPRA_2022; set GPRA2;
-if Federal_Fiscal_Year=2022;
+if Federal_Fiscal_Year in (2022,2023);
 run;
 proc sort data=GPRA_2022; by Federal_Fiscal_Year Project_Name View_Detail;
 run;
@@ -204,7 +222,7 @@ data hab_check; set hab_comb;
 if primaryhabitat=' ';
 run;
 
-proc sort; by federal_fiscal_year project_name;
+proc sort data=hab_check; by federal_fiscal_year project_name;
 run;
 PROC EXPORT data=hab_comb 
     outfile="&loc.&clean"
