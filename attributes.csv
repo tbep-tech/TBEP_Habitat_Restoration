@@ -1,0 +1,44 @@
+attributeName,attributeDefinition,formatString,definition,unit,numberType,DataType
+View_Detail,Unique numeric identifier assigned by the USEPA NEPORT reporting system,,,dimensionless,real,numeric
+Federal_Fiscal_Year,Federal fiscal year of the project (starts October),YYYY,,,,Date
+Region,"EPA Region, Region 4 for Florida",,,,,factor
+State_Code,State abbreviation for project location (FL),,,,,factor
+NEP_Name,Name of the National Estuary Program (Tampa Bay Estuary Program),,,,,factor
+Project_Name,Name of the project from the partner,,project partner,,,character
+Project_Description,Brief description of the project from the partner: background context such as why the restoration/protection is necessary; general location in the estuary/study area; brief elaboration of the restoration technique used; and the intended project outcomes. The minimum number of characters that this field requires is 75 and the maximum is 750. ,,project description,,,character
+Habitat_Description,"Briefly describe the habitat general characteristics (sources of impacts, significant features, site uses, etc.). The minimum number of characters that this field requires is 25 and the maximum is 500. ",,habitat description,,,character
+Habitat_Type,"Short category for the habitat type, habitat types and definitions are provided in USEPA NEPORT guidance. When reporting a project that has multiple habitat categories, select the one that represents the greatest acreage. ",,,,,factor
+Restoration_Technique,"Type of restoration technique used for the project, restoration techniques and definitions are provided in USEPA NEPORT guidance. If you cannot divide the acres by habitat category and report each acreage separately, choose the habitat category with the largest acreage on the site; report that acreage, along with the associated restoration technique that took place on that portion of the parcel. ",,restoration technique,,,character
+Donated_Land,Yes/No indicating if land was donated,,Yes/No indicating if land was donated,,,character
+Data_Unavailable,Y indicating if data for the project are unavailable,,Y indicating if data for the project are unavailable,,,character
+Total_Project_Cost,Total project cost that includes Sec 320 funds and other,,,dimensionless,real,numeric
+Project_Benefits,"Benefit provided by the project, e.g., erosion control, improve or protect water quality; benefits and definitions provided in USEPA NEPORT guidance",,project benefit,,,character
+Activity_Name,"General category for type of activity, one of Enhancement, Establishment, Maintenance, Protection, Reestablish, Rehabilitate, Restoration",,,,,factor
+Lead_Implementer,"Primary person, group, or entity responsible for completing the specific habitat protection/restoration activity. They may conduct the actual on-the-ground work (e.g., site manipulation), procure the services of a contractor that carries out the work, or provide the key funding for the action. ",,lead implementer,,,character
+Partners,Additional partners supporting the lead implementer,,additional partners,,,character
+Main_Funding_Source,"Description of funding source funding a majority of the project; The main funding source includes the entity that provides funding for the work being reported and their particular financial assistance program (e.g., NOAA Community Based Restoration Program).",,funding source,,,character
+Site_Owner,"Owner of the site where the project occurred; Indicate whether this is a federal entity, state agency, private landowner, business, or other entity that owns the site. ",,site owner,,,character
+Last_Updated_Date,"Date and time of last record update, day-month-year hours.minutes.seconds AM/PM and UTC change",DD-MMM-YY HH.MM.SS,,,,Date
+NEP_Comments,Optional comments from the NEP about the project,,optional NEP comments,,,character
+HQ_Comments,Optional EPA comments about the record,,optional EPA comments,,,character
+HQ_Status,Status indicating if HQ comments have been addressed,,Status indicating if HQ comments have been addressed,,,character
+Region_Status,Status indicating if Region comments have been addressed,,Status indicating if Region comments have been addressed,,,character
+Author,Name of the individual entering the project,,Name of the individual entering the project,,,character
+Submitter_Email,Email of the individual entering the project,,Email of the individual entering the project,,,character
+PrimaryHabitat,"Description of the primary habitat type for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)",,,,,factor
+SecondaryHabitat,"Description of the secondary habitat type if additional apply for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)",,,,,factor
+EPA_Section_320,Amount of Clean Water Act Sec 320 funds that were used for the project,,,dimensionless,real,numeric
+Acres,"Acreage estimate of the project area (at least two decimal places). If you enter a number for acres, do not enter a number for linear miles or linear feet. ",,,acre,real,numeric
+Miles,"Linear distance in miles of the project area (at least two decimal places), usually only applies for linear features (e.g., living shorelines or riparian areas). If you enter a number for linear miles, do not enter a number for acres or linear feet. ",,,mile,real,numeric
+Latitude,"Latitude in decimal degrees (three decimal points) of the project location, EPSG 4326",,,dimensionless,real,numeric
+Longitude,"Longitude in decimal degrees (three decimal points) of the project location, EPSG 4326",,,dimensionless,real,numeric
+Feet,"Linear distance in feet of the project area (at least two decimal places), usually only applies for linear features (e.g., living shorelines or riparian areas). If you enter a number for linear feet, do not enter a number for acres or linear miles. ",,,foot,real,numeric
+ID_Number,Unique identifier for habitat restoration projects compiled during TBEP's Habitat Master Plan Update in 2020 and completed prior to 2021. ,,Unique identifier for habitat restoration projects compiled during TBEP's Habitat Master Plan Update in 2020 and completed prior to 2021. ,,,character
+GeneralHabitat,"General habitat description of the project, one of Estuarine, Freshwater, Mix (estuarine and freshwater), Mix (estuarine and upland), Mix (estuarine, freshwater, and upland), Mix (freshwater and upland), Other, Upland",,,,,factor
+GeneralActivity,"General activity description of the project, one of Enhancement or Restoration",,,,,factor
+BeforePhotoCredit,Attribution for the photo before the project,,Attribution for the photo before the project,,,character
+BeforePhotoCaption,Caption for the photo before the project,,Caption for the photo before the project,,,character
+DuringPhotoCredit,Attribution for the photo during the project,,Attribution for the photo during the project,,,character
+DuringPhotoCaption,Caption for the photo during the project,,Caption for the photo during the project,,,character
+AfterPhotoCredit,Attribution for the photo after the project,,Attribution for the photo after the project,,,character
+AfterPhotoCaption,Caption for the photo after the project,,Caption for the photo after the project,,,character

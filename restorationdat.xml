@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="916a9233-d033-4d12-b496-3185b2ad2f0d" system="uuid" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <dataset>
+    <title>Restoration Projects in Tampa Bay and its Watershed</title>
+    <creator id="https://orcid.org/0000-0002-4996-0059">
+      <individualName>
+        <givenName>Marcus</givenName>
+        <surName>Beck</surName>
+      </individualName>
+      <electronicMailAddress>mbeck@tbep.org</electronicMailAddress>
+    </creator>
+    <abstract>The US Environmental Protection Agency (EPA) is required to conform to the Government Performance and Results Act (GPRA). Data for habitat restoration are submitted each year through the National Estuary Program Online Reporting Tool (GPRA/NEPORT), as reported by the Tampa Bay Estuary Program. This dataset is a comprehensive list of restoration projects in Tampa Bay and its watershed from 1971 to present as reported through GPRA/NEPORT.  The dataset includes information on the project name, date, location, restoration activity, habitat type, partner responsible for the project, and approximate coverage.  The dataset is updated annually.</abstract>
+    <keywordSet>
+      <keyword>enhancement</keyword>
+      <keyword>GPRA</keyword>
+      <keyword>protection</keyword>
+      <keyword>restoration</keyword>
+      <keyword>watershed</keyword>
+      <keywordThesaurus>Tampa Bay vocabulary</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>This dataset is released to the public and may be freely downloaded. Please keep the designated contact person informed of any plans to use the dataset. Consultation or collaboration with the original investigators is strongly encouraged. Publications and data products that make use of the dataset must include proper acknowledgement.</intellectualRights>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Tampa Bay and its watershed, Florida, USA</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-82.8393</westBoundingCoordinate>
+          <eastBoundingCoordinate>-81.9506</eastBoundingCoordinate>
+          <northBoundingCoordinate>28.287</northBoundingCoordinate>
+          <southBoundingCoordinate>27.233</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>1971-01-01</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2023-12-31</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+      <taxonomicCoverage>
+        <taxonomicClassification>
+          <taxonRankName>Species</taxonRankName>
+        </taxonomicClassification>
+      </taxonomicCoverage>
+    </coverage>
+    <contact>
+      <individualName>
+        <givenName>Marcus</givenName>
+        <surName>Beck</surName>
+      </individualName>
+      <organizationName>Tampa Bay Estuary Program</organizationName>
+      <address>
+        <deliveryPoint>263 13th Ave South</deliveryPoint>
+        <city>St. Petersburg</city>
+        <administrativeArea>FL</administrativeArea>
+        <postalCode>33701</postalCode>
+        <country>USA</country>
+      </address>
+      <phone>(727) 893-2765</phone>
+      <electronicMailAddress>mbeck@tbep.org</electronicMailAddress>
+    </contact>
+    <dataTable>
+      <entityName>restoration.csv</entityName>
+      <entityDescription>Restoration Projects in Tampa Bay and its Watershed</entityDescription>
+      <physical>
+        <objectName>restoration.csv</objectName>
+        <size unit="bytes">523029</size>
+        <authentication method="MD5">098b906d736b6eae042b3147b4ce82ac</authentication>
+        <dataFormat>
+          <textFormat>
+            <recordDelimiter>&#13;
+</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>View_Detail</attributeName>
+          <attributeDefinition>Unique numeric identifier assigned by the USEPA NEPORT reporting system</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Federal_Fiscal_Year</attributeName>
+          <attributeDefinition>Federal fiscal year of the project (starts October)</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Region</attributeName>
+          <attributeDefinition>EPA Region, Region 4 for Florida</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Region 4</code>
+                    <definition>Region 4</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>State_Code</attributeName>
+          <attributeDefinition>State abbreviation for project location (FL)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>FL</code>
+                    <definition>FL</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>NEP_Name</attributeName>
+          <attributeDefinition>Name of the National Estuary Program (Tampa Bay Estuary Program)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Tampa Bay Estuary Program</code>
+                    <definition>Tampa Bay Estuary Program</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Project_Name</attributeName>
+          <attributeDefinition>Name of the project from the partner</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>project partner</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Project_Description</attributeName>
+          <attributeDefinition>Brief description of the project from the partner: background context such as why the restoration/protection is necessary; general location in the estuary/study area; brief elaboration of the restoration technique used; and the intended project outcomes. The minimum number of characters that this field requires is 75 and the maximum is 750.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>project description</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Habitat_Description</attributeName>
+          <attributeDefinition>Briefly describe the habitat general characteristics (sources of impacts, significant features, site uses, etc.). The minimum number of characters that this field requires is 25 and the maximum is 500.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>habitat description</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Habitat_Type</attributeName>
+          <attributeDefinition>Short category for the habitat type, habitat types and definitions are provided in USEPA NEPORT guidance. When reporting a project that has multiple habitat categories, select the one that represents the greatest acreage.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Agriculture/Ranch Land</code>
+                    <definition>Agriculture/Ranch Land</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Beach</code>
+                    <definition>Beach</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Dune</code>
+                    <definition>Dune</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Estuarine Shoreline</code>
+                    <definition>Estuarine Shoreline</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Estuarine Water Column</code>
+                    <definition>Estuarine Water Column</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Field Meadow</code>
+                    <definition>Field Meadow</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Field/Meadow</code>
+                    <definition>Field/Meadow</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Forest/Woodland</code>
+                    <definition>Forest/Woodland</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Forested Wetland</code>
+                    <definition>Forested Wetland</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Forested Wetlands</code>
+                    <definition>Forested Wetlands</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Freshwater Marsh</code>
+                    <definition>Freshwater Marsh</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Grassland</code>
+                    <definition>Grassland</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Hard Bottom</code>
+                    <definition>Hard Bottom</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Island</code>
+                    <definition>Island</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Lake/Pond</code>
+                    <definition>Lake/Pond</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mangrove</code>
+                    <definition>Mangrove</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Other</code>
+                    <definition>Other</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Riparian</code>
+                    <definition>Riparian</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SAV (Submerged Aquatic Vegetation)</code>
+                    <definition>SAV (Submerged Aquatic Vegetation)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Salt Marsh</code>
+                    <definition>Salt Marsh</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Shell Bottom</code>
+                    <definition>Shell Bottom</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Submerged Aquatic Vegetation (SAV)</code>
+                    <definition>Submerged Aquatic Vegetation (SAV)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Tidal Wetland: Sheltered waters along the coast which are affected by both tides and freshwater run-off.</code>
+                    <definition>Tidal Wetland: Sheltered waters along the coast which are affected by both tides and freshwater run-off.</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Restoration_Technique</attributeName>
+          <attributeDefinition>Type of restoration technique used for the project, restoration techniques and definitions are provided in USEPA NEPORT guidance. If you cannot divide the acres by habitat category and report each acreage separately, choose the habitat category with the largest acreage on the site; report that acreage, along with the associated restoration technique that took place on that portion of the parcel.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>restoration technique</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Donated_Land</attributeName>
+          <attributeDefinition>Yes/No indicating if land was donated</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Yes/No indicating if land was donated</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Data_Unavailable</attributeName>
+          <attributeDefinition>Y indicating if data for the project are unavailable</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Y indicating if data for the project are unavailable</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Total_Project_Cost</attributeName>
+          <attributeDefinition>Total project cost that includes Sec 320 funds and other</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Project_Benefits</attributeName>
+          <attributeDefinition>Benefit provided by the project, e.g., erosion control, improve or protect water quality; benefits and definitions provided in USEPA NEPORT guidance</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>project benefit</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Activity_Name</attributeName>
+          <attributeDefinition>General category for type of activity, one of Enhancement, Establishment, Maintenance, Protection, Reestablish, Rehabilitate, Restoration</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Enhancement</code>
+                    <definition>Enhancement</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Establishme</code>
+                    <definition>Establishme</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Maintenance</code>
+                    <definition>Maintenance</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Protection</code>
+                    <definition>Protection</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Reestablish</code>
+                    <definition>Reestablish</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Rehabilitat</code>
+                    <definition>Rehabilitat</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Restoration</code>
+                    <definition>Restoration</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Lead_Implementer</attributeName>
+          <attributeDefinition>Primary person, group, or entity responsible for completing the specific habitat protection/restoration activity. They may conduct the actual on-the-ground work (e.g., site manipulation), procure the services of a contractor that carries out the work, or provide the key funding for the action.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>lead implementer</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Partners</attributeName>
+          <attributeDefinition>Additional partners supporting the lead implementer</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>additional partners</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Main_Funding_Source</attributeName>
+          <attributeDefinition>Description of funding source funding a majority of the project; The main funding source includes the entity that provides funding for the work being reported and their particular financial assistance program (e.g., NOAA Community Based Restoration Program).</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>funding source</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Site_Owner</attributeName>
+          <attributeDefinition>Owner of the site where the project occurred; Indicate whether this is a federal entity, state agency, private landowner, business, or other entity that owns the site.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>site owner</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Last_Updated_Date</attributeName>
+          <attributeDefinition>Date and time of last record update, day-month-year hours.minutes.seconds AM/PM and UTC change</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>DD-MMM-YY HH.MM.SS</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>NEP_Comments</attributeName>
+          <attributeDefinition>Optional comments from the NEP about the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>optional NEP comments</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>HQ_Comments</attributeName>
+          <attributeDefinition>Optional EPA comments about the record</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>optional EPA comments</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>HQ_Status</attributeName>
+          <attributeDefinition>Status indicating if HQ comments have been addressed</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Status indicating if HQ comments have been addressed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Region_Status</attributeName>
+          <attributeDefinition>Status indicating if Region comments have been addressed</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Status indicating if Region comments have been addressed</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Author</attributeName>
+          <attributeDefinition>Name of the individual entering the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Name of the individual entering the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Submitter_Email</attributeName>
+          <attributeDefinition>Email of the individual entering the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Email of the individual entering the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>PrimaryHabitat</attributeName>
+          <attributeDefinition>Description of the primary habitat type for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Artificial Reefs</code>
+                    <definition>Artificial Reefs</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Coastal Uplands</code>
+                    <definition>Coastal Uplands</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Forested Freshwater Wetlands</code>
+                    <definition>Forested Freshwater Wetlands</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Hard Bottom</code>
+                    <definition>Hard Bottom</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Intertidal Estuarine (Other)</code>
+                    <definition>Intertidal Estuarine (Other)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Living Shorelines</code>
+                    <definition>Living Shorelines</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Low-Salinity Salt Marsh</code>
+                    <definition>Low-Salinity Salt Marsh</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mangrove Forests</code>
+                    <definition>Mangrove Forests</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Non-forested Freshwater Wetlands</code>
+                    <definition>Non-forested Freshwater Wetlands</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Other</code>
+                    <definition>Other</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Oyster Bars</code>
+                    <definition>Oyster Bars</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Salt Barrens</code>
+                    <definition>Salt Barrens</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Seagrasses</code>
+                    <definition>Seagrasses</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Tidal Tributaries</code>
+                    <definition>Tidal Tributaries</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Uplands (Non-coastal)</code>
+                    <definition>Uplands (Non-coastal)</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>SecondaryHabitat</attributeName>
+          <attributeDefinition>Description of the secondary habitat type if additional apply for reporting with the Habitat Master Plan of the Tampa Bay Estuary Program, one of Coastal Uplands, Forested Freshwater Wetlands, Hard Bottom, Intertidal Estuarine (Other), Living Shorelines, Low-Salinity Salt Marsh, Mangrove Forests, Non-forested Freshwater Wetlands, Oyser Bars, Salt Barrens, Seagrasses, Tidal Tributaries, Uplands (Non-Coastal)</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Artificial Reefs</code>
+                    <definition>Artificial Reefs</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Hard Bottom</code>
+                    <definition>Hard Bottom</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Intertidal Estuarine (Other)</code>
+                    <definition>Intertidal Estuarine (Other)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Living Shorelines</code>
+                    <definition>Living Shorelines</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Oyster Bars</code>
+                    <definition>Oyster Bars</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>EPA_Section_320</attributeName>
+          <attributeDefinition>Amount of Clean Water Act Sec 320 funds that were used for the project</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Acres</attributeName>
+          <attributeDefinition>Acreage estimate of the project area (at least two decimal places). If you enter a number for acres, do not enter a number for linear miles or linear feet.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>acre</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Miles</attributeName>
+          <attributeDefinition>Linear distance in miles of the project area (at least two decimal places), usually only applies for linear features (e.g., living shorelines or riparian areas). If you enter a number for linear miles, do not enter a number for acres or linear feet.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>mile</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Latitude</attributeName>
+          <attributeDefinition>Latitude in decimal degrees (three decimal points) of the project location, EPSG 4326</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Longitude</attributeName>
+          <attributeDefinition>Longitude in decimal degrees (three decimal points) of the project location, EPSG 4326</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>Feet</attributeName>
+          <attributeDefinition>Linear distance in feet of the project area (at least two decimal places), usually only applies for linear features (e.g., living shorelines or riparian areas). If you enter a number for linear feet, do not enter a number for acres or linear miles.</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>foot</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>ID_Number</attributeName>
+          <attributeDefinition>Unique identifier for habitat restoration projects compiled during TBEP's Habitat Master Plan Update in 2020 and completed prior to 2021.</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Unique identifier for habitat restoration projects compiled during TBEP's Habitat Master Plan Update in 2020 and completed prior to 2021.</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>GeneralHabitat</attributeName>
+          <attributeDefinition>General habitat description of the project, one of Estuarine, Freshwater, Mix (estuarine and freshwater), Mix (estuarine and upland), Mix (estuarine, freshwater, and upland), Mix (freshwater and upland), Other, Upland</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Estuarine</code>
+                    <definition>Estuarine</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Freshwater</code>
+                    <definition>Freshwater</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mix (estuarine and freshwater)</code>
+                    <definition>Mix (estuarine and freshwater)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mix (estuarine and upland)</code>
+                    <definition>Mix (estuarine and upland)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mix (estuarine, freshwater, and upland)</code>
+                    <definition>Mix (estuarine, freshwater, and upland)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Mix (freshwater and upland)</code>
+                    <definition>Mix (freshwater and upland)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Other</code>
+                    <definition>Other</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Uplands</code>
+                    <definition>Uplands</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>GeneralActivity</attributeName>
+          <attributeDefinition>General activity description of the project, one of Enhancement or Restoration</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>Enhancement</code>
+                    <definition>Enhancement</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Protection</code>
+                    <definition>Protection</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Restoration</code>
+                    <definition>Restoration</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>BeforePhotoCredit</attributeName>
+          <attributeDefinition>Attribution for the photo before the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Attribution for the photo before the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>BeforePhotoCaption</attributeName>
+          <attributeDefinition>Caption for the photo before the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Caption for the photo before the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>DuringPhotoCredit</attributeName>
+          <attributeDefinition>Attribution for the photo during the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Attribution for the photo during the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>DuringPhotoCaption</attributeName>
+          <attributeDefinition>Caption for the photo during the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Caption for the photo during the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AfterPhotoCredit</attributeName>
+          <attributeDefinition>Attribution for the photo after the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Attribution for the photo after the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>AfterPhotoCaption</attributeName>
+          <attributeDefinition>Caption for the photo after the project</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>Caption for the photo after the project</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+    </dataTable>
+  </dataset>
+</eml:eml>
