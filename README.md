@@ -4,4 +4,4 @@ This dataset contains a comprehensive list of habitat restoration projects condu
 
 The archived dataset is available on KNB at: <https://doi.org/10.5063/F1TD9VTJ>
 
-Please see the `sas` branch for the original SAS code used to clean and merge the two data sources.
+Please see the [sas](https://github.com/tbep-tech/TBEP_Habitat_Restoration/tree/sas) branch for the original SAS code used to clean and merge the two data sources.
