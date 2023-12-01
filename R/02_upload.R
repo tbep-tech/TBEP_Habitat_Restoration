@@ -48,8 +48,8 @@ message(sprintf('Uploaded package with identifier: %s', packageId))
 
 ##
 # # update metadata
-# cn <- CNode("STAGING")
-# mn <- getMNode(cn, "urn:node:mnStageUCSB2")
+# cn <- CNode("PROD")
+# mn <- getMNode(cn, "urn:node:KNB")
 # sysmeta <- getSystemMetadata(mn, doi)
 # sysmeta <- addAccessRule(sysmeta, "public", "read")
 # status <- updateSystemMetadata(mn, doi, sysmeta)
