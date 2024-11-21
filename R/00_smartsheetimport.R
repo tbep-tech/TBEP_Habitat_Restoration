@@ -59,6 +59,7 @@ gpra <- gpraraw %>%
       PrimaryHabitat %in% c('Agriculture/Ranch Land/Riparian', 'Agriculture/Ranch Land', 'Forest/Woodland', 'Grassland') ~ 'Uplands (Non-coastal)',
       PrimaryHabitat %in% c('Shell Bottom') ~ 'Oyster Bars', 
       PrimaryHabitat %in% c('Forested Wetland') ~ 'Forested Freshwater Wetlands',
+      PrimaryHabitat %in% c('Tidal Flats') ~ 'Intertidal Estuarine (Other)',
       T ~ PrimaryHabitat
     ),
     GeneralHabitat = case_when(
