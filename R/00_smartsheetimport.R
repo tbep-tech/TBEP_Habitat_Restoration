@@ -1,7 +1,8 @@
-# library(remotes)
-# install_github('fawda123/rsmartsheet'))
+# remotes::install_github('fawda123/rsmartsheet'))
 library(rsmartsheet)
 library(dplyr)
+
+# smartsheet import ---------------------------------------------------------------------------
 
 smrkey <- Sys.getenv("smartsheets_key")
 set_smartsheet_api_key(smrkey)
@@ -120,5 +121,13 @@ gpra <- gpraraw %>%
     AfterPhotoCredit, 
     AfterPhotoCaption
   )
-  
-# add to restoration.csv but need to make sure it doesn't just append if script is run again
+
+# add to pre-smartsheet entries ---------------------------------------------------------------
+
+# read original
+orig <- read.csv(here::here('data-raw/restoration-noedit.csv'), stringsAsFactors = F)  
+
+# add smartsheet to original
+restoration <- bind_rows(orig, gpra)
+
+write.csv(restoration, here::here('restoration.csv'), row.names = F)
