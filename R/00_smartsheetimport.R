@@ -129,6 +129,13 @@ gpra <- gpraraw %>%
 orig <- read.csv(here::here('data-raw/restoration-noedit.csv'), stringsAsFactors = F)  
 
 # add smartsheet to original
-restoration <- bind_rows(orig, gpra)
+# change Enhancement to Maintenance
+restoration <- bind_rows(orig, gpra) %>% 
+  mutate(
+    GeneralActivity = case_when(
+      GeneralActivity == 'Enhancement' ~ 'Maintenance', 
+      T ~ GeneralActivity
+    )
+  )
 
 write.csv(restoration, here::here('restoration.csv'), row.names = F)
