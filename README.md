@@ -5,3 +5,32 @@ This dataset contains a comprehensive list of habitat restoration projects condu
 The archived dataset is available on KNB at: <https://doi.org/10.5063/F11Z42VZ>
 
 Please see the [sas](https://github.com/tbep-tech/TBEP_Habitat_Restoration/tree/sas) branch for the original SAS code used to clean and merge the two data sources.
+
+The workflow for updating data in this repository that then updates multiple downstream products is shown below.  
+
+```mermaid
+flowchart TD
+    A[TBEP Partners] -->|Annual Data Entry| B[Smartsheet]
+    B --> C[USEPA NEPORT]
+    B --> D[GitHub: TBEP_Habitat_Restoration]
+    D -->|Update| E[restoration.csv]
+    E -->|Import| F[GitHub: habitat-report-card]
+    F -->|Generate| G[Quarto HTML]
+    G -->|Push| F
+    G -->|Manual Extract| H[Habitat Report Card PDF]
+    C -->|Approval| I[Final Data]
+    E -->|"Email (After Final)"| J[USF Water Atlas]
+    E -->|"Run Scripts (After Final)"| K[Data Package with Metadata]
+    K -->|Submit| L[KNB Data Archive]
+    I -->|Final Corrections| B
+    
+    classDef repo fill:#f9f,stroke:#333,stroke-width:2px
+    classDef system fill:#bbf,stroke:#333,stroke-width:2px
+    classDef file fill:#bfb,stroke:#333,stroke-width:2px
+    classDef output fill:#fbb,stroke:#333,stroke-width:2px
+    
+    class D,F repo
+    class B,C,J,L system
+    class E,K file
+    class G,H output
+```    
