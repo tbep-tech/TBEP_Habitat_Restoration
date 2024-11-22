@@ -24,10 +24,11 @@ flowchart TD
     K -->|Submit| L[KNB Data Archive]
     I -->|Final Corrections| B
     
-    classDef repo fill:#427355,stroke:#333,stroke-width:2px
-    classDef system fill:#958984,stroke:#333,stroke-width:2px
-    classDef file fill:#004F7E,stroke:#333,stroke-width:2px
-    classDef output fill:#00806E,stroke:#333,stroke-width:2px
+    classDef repo fill:#427355,stroke:#333,stroke-width:2px,color:#ffffff
+    classDef system fill:#004F7E,stroke:#333,stroke-width:2px,color:#ffffff
+    classDef file fill:#958984,stroke:#333,stroke-width:2px,color:#333333
+    classDef output fill:#5C4A42,stroke:#333,stroke-width:2px,color:#ffffff
+    classDef default fill:#00806E,stroke:#333,stroke-width:2px,color:#ffffff
     
     class D,F repo
     class B,C,J,L system
