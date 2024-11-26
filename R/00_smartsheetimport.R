@@ -71,10 +71,6 @@ gpra <- gpraraw %>%
                             "Forested Freshwater Wetlands") ~ "Freshwater",
       PrimaryHabitat %in% c("Coastal Uplands", "Uplands (Non-coastal)") ~ "Uplands", 
       T ~ 'Mixed'
-    ), 
-    Miles = case_when(
-      GeneralActivity %in% 'Maintenance' & Restoration_Technique %in% 'Debris Removal' ~ NA_real_,
-      T ~ Miles
     )
   ) %>%
   select(
