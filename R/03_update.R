@@ -14,11 +14,10 @@ mn <- getMNode(cn, 'urn:node:KNB')
 echoCredentials(cn)
 
 d1c <- D1Client(cn, mn)
-packageId <- "resource_map_urn:uuid:e729d64f-bf8b-46c5-8c9c-3b486ae8d4ba"
-packageId <- "resource_map_doi:10.5063/F11Z42VZ"
+packageId <- "urn:uuid:eee9d916-8be7-4feb-8bda-58491bf58b82"
 
 # download complete data package
-pkg <- getDataPackage(d1c, identifier = packageId, lazyLoad = TRUE, quiet = FALSE)
+pkg <- getDataPackage(d1c, identifier = packageId, lazyLoad = FALSE, quiet = FALSE)
 
 # update dataset ------------------------------------------------------------------------------
 
@@ -26,20 +25,54 @@ pkg <- getDataPackage(d1c, identifier = packageId, lazyLoad = TRUE, quiet = FALS
 newfl <- here('restoration.csv')
 objId <- selectMember(pkg, name="sysmeta@fileName", value='restoration.csv')
 
+# import old data
+origObj <- getMember(pkg, objId)
+origData <- getData(origObj)  # This will work
+origDF <- read.csv(text=rawToChar(origData))
+
 # update data file
 pkg <- replaceMember(pkg, objId, replacement = 'restoration.csv', mediaType = "text/csv")
+
+# import new data
+objId <- selectMember(pkg, name="sysmeta@fileName", value='restoration.csv')
+updtObj <- getMember(pkg, objId)
+updtData <- getData(updtObj)  # This will work
+updtDF <- read.csv(text=rawToChar(updtData))
+
+# verify a difference
+cat("Original dimensions:", dim(origDF), "\n")
+cat("Updated package dimensions:", dim(updtDF), "\n")
 
 # update metadata -----------------------------------------------------------------------------
 
 # see https://cran.r-project.org/web/packages/dataone/vignettes/v06-update-package.html
 
-metadataId <- selectMember(pkg, name="sysmeta@formatId", value="eml://ecoinformatics.org/eml-2.1.1")
+# get the metadata object identifier
+metadataId <- selectMember(pkg, name="sysmeta@formatId", value="https://eml.ecoinformatics.org/eml-2.2.0")
 
-nameXpath <- '//abstract[text()="The US Environmental Protection Agency (EPA) is required to conform to the Government Performance and Results Act (GPRA). Data for habitat restoration are submitted each year through the National Estuary Program Online Reporting Tool (GPRA/NEPORT), as reported by the Tampa Bay Estuary Program. This dataset is a comprehensive list of restoration projects in Tampa Bay and its watershed from 1971 to present as reported through GPRA/NEPORT.  The dataset includes information on the project name, date, location, restoration activity, habitat type, partner responsible for the project, and approximate coverage.  The dataset is updated annually."]'
+# get old date
+metadataBytes <- getData(pkg, metadataId)
+metadata_xml <- xml2::read_xml(metadataBytes)
+dtold <- xml2::xml_find_all(metadata_xml, "//temporalCoverage/rangeOfDates/endDate/calendarDate")
 
-newAbstract <- 'Data include habitat restoration projects conducted in Tampa Bay and its watershed from 1971 to the present. Records prior to 2006 were compiled during the Tampa Bay Estuary Program’s Habitat Master Plan Update (HMP, 2020). Since 2006, habitat restoration data are reported to the Tampa Bay Estuary Program by regional partners and submitted each year to the US Environmental Protection Agency (EPA) through the National Estuary Program Online Reporting Tool (NEPORT) to conform to the Government Performance and Results Act (GPRA). The dataset includes information on the project name, date, location, restoration activity, habitat type, partner responsible for the project, and approximate coverage.  The dataset is updated annually.'
+# define the XPath to the end date element
+endDateXpath <- "//temporalCoverage/rangeOfDates/endDate/calendarDate"
 
-pkg <- updateMetadata(pkg, metadataId, xpath = nameXpath, replacement = newAbstract)
+# define the new end date value
+newEndDate <- "2024-12-31"
+
+# update the metadata using updateMetadata function
+pkg <- updateMetadata(pkg, metadataId, xpath=endDateXpath, replacement=newEndDate)
+
+# get new date
+metadataId <- selectMember(pkg, name="sysmeta@formatId", value="https://eml.ecoinformatics.org/eml-2.2.0")
+metadataBytes <- getData(pkg, metadataId)
+metadata_xml <- xml2::read_xml(metadataBytes)
+dtnew <- xml2::xml_find_all(metadata_xml, "//temporalCoverage/rangeOfDates/endDate/calendarDate")
+
+# verify differenct
+cat("Old end date:", xml2::xml_text(dtold), "\n")
+cat("New end date:", xml2::xml_text(dtnew), "\n")
 
 # update package ------------------------------------------------------------------------------
 
