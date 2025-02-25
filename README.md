@@ -12,7 +12,7 @@ The workflow for updating data in this repository that then updates multiple dow
 flowchart TD
     A[TBEP Partners] -->|Annual Data Entry| B[Smartsheet]
     B --> C[USEPA NEPORT]
-    B --> D[GitHub: TBEP_Habitat_Restoration (see additional steps below)]
+    B --> D[GitHub: TBEP_Habitat_Restoration - see additional steps below]
     D -->|Update| E[restoration.csv]
     E -->|Import| F[GitHub: habitat-report-card]
     F -->|Generate| G[Quarto HTML]
@@ -21,7 +21,7 @@ flowchart TD
     C -->|Approval| I[Final Data]
     E -->|"Email (After Final)"| J[USF Water Atlas]
     E -->|"Run Scripts (After Final)"| K[Data Package with Metadata]
-    K -->|Submit| L[KNB Data Archive (see additional steps below)]
+    K -->|Submit| L[KNB Data Archive - see additional steps below]
     I -->|Final Corrections| B
     
     classDef repo fill:#427355,stroke:#333,stroke-width:2px,color:#ffffff
