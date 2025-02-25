@@ -1,6 +1,8 @@
-# remotes::install_github('fawda123/rsmartsheet'))
+# remotes::install_github('fawda123/rsmartsheet')
 library(rsmartsheet)
 library(dplyr)
+
+maxyr <- 2024
 
 # smartsheet import ---------------------------------------------------------------------------
 
@@ -20,6 +22,7 @@ gpraraw <- get_sheet_as_csv('TBEP_NEPORT_Restoration_Data') %>%
 # select columns in correct order
 gpra <- gpraraw %>% 
   filter(Status == 'Entered') %>% 
+  filter(Federal.Fiscal.Year == maxyr) %>% 
   rename(
     Federal_Fiscal_Year = Federal.Fiscal.Year,
     Project_Name = Project.Name,
@@ -119,10 +122,10 @@ gpra <- gpraraw %>%
     AfterPhotoCaption
   )
 
-# add to pre-smartsheet entries ---------------------------------------------------------------
+# add entries to main file --------------------------------------------------------------------
 
-# read original
-orig <- read.csv(here::here('data-raw/restoration-noedit.csv'), stringsAsFactors = F)  
+# read main file
+orig <- read.csv(here::here('restoration.csv'), stringsAsFactors = F)  
 
 # add smartsheet to original
 # change Enhancement to Maintenance
