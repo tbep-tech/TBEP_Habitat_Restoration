@@ -14,7 +14,7 @@ mn <- getMNode(cn, 'urn:node:KNB')
 echoCredentials(cn)
 
 d1c <- D1Client(cn, mn)
-packageId <- "urn:uuid:eee9d916-8be7-4feb-8bda-58491bf58b82"
+packageId <- "urn:uuid:cd33df16-a1ae-4715-a11f-e90eb84f04f5"
 
 # download complete data package
 pkg <- getDataPackage(d1c, identifier = packageId, lazyLoad = FALSE, quiet = FALSE)

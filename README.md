@@ -51,10 +51,11 @@ Once USEPA approval is given and final approvals are made, the data is updated i
 
 ## Updating KNB repository
 
-The "official" dataset that needs to be updated each year is archived on [KNB](https://knb.ecoinformatics.org/view/doi:10.5063/F11Z42VZ). This should only be done after the data are approved by USEPA and the file `restoration.csv` is updated as above. The steps to update the KNB repository are as follows:
+The "official" dataset that needs to be updated each year is archived on [KNB](https://knb.ecoinformatics.org/view/doi:10.5063/F1J101NP). This should only be done after the data are approved by USEPA and the file `restoration.csv` is updated as above. The steps to update the KNB repository are as follows:
 
 1. Open the script [`R/03_update.R`](https://github.com/tbep-tech/TBEP_Habitat_Restoration/blob/main/R/03_update.R).
 1. Before the script is run, a token for DataONE must be available in the `.Renviron` file.  Get the token from Marcus and add it to the `.Renviron` file as `dataone_token=your_token_here` using `usethis::edit_r_environ()`.  Save the file and restart R.  The token will be available as `Sys.getenv("dataone_token")`.
+1. Change [line 17](https://github.com/tbep-tech/TBEP_Habitat_Restoration/blob/33f966aae6066bf062a5d629f424f2de92077efa/R/03_update.R#L17) to the current version ID. This should be available at the of the page for the [repository](https://knb.ecoinformatics.org/view/doi:10.5063/F1J101NP).
 1. Change [line 62](https://github.com/tbep-tech/TBEP_Habitat_Restoration/blob/a8b0d9b96e70815fc9fc9c3b3a0eb967e82edbb3/R/03_update.R#L62) to December 31st for the year in which the data were updated, e.g., 2024-12-31.  
 1. Run the script, verify the console output (dimensions of new and old data should be different, new and old dates should be different) and that the data package has been successfully uploaded to KNB by visiting the URL.
 1. Commit the changes in [`R/03_update.R`](https://github.com/tbep-tech/TBEP_Habitat_Restoration/blob/main/R/03_update.R) and push the changes to GitHub (only line 62 should be changed).
