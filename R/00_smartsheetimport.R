@@ -125,7 +125,8 @@ gpra <- gpraraw %>%
 # add entries to main file --------------------------------------------------------------------
 
 # read main file
-orig <- read.csv(here::here('restoration.csv'), stringsAsFactors = F)  
+orig <- read.csv(here::here('restoration.csv'), stringsAsFactors = F)%>%
+  filter(Federal_Fiscal_Year<maxyr)
 
 # add smartsheet to original
 # change Enhancement to Maintenance
