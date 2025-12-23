@@ -59,7 +59,7 @@ dtold <- xml2::xml_find_all(metadata_xml, "//temporalCoverage/rangeOfDates/endDa
 endDateXpath <- "//temporalCoverage/rangeOfDates/endDate/calendarDate"
 
 # define the new end date value
-newEndDate <- "2024-12-31"
+newEndDate <- "2025-12-31"
 
 # update the metadata using updateMetadata function
 pkg <- updateMetadata(pkg, metadataId, xpath=endDateXpath, replacement=newEndDate)
